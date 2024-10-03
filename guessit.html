@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <Title>Guess-it</Title>
+        <h1>Guess the Color by Braeden Lhamon</h1>
+    </head>
+ 
+<body>
+
+<h2>Getting input</h2>
+
+<form>
+    <label for="form_color">Guess the color</label>
+    <input type ="password" id="form_color" name="form_color" min=10 max=50 step=2 value=Red> <br>
+
+    <label for="form_guess">Enter a guess</label>
+    <input type ="text" id="form_guess" name="form_guess" autofocus> <br>
+
+    <input type="button" onclick="processColor()" value="Check the color">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+var attempts, wrong = 0;
+
+function processColor (){
+    console.log("Getting form values")
+    color = document.getElementById("form_color").value
+    guess = document.getElementById("form_guess").value
+    //confirmed = confirm("Are these the values? "+color+" and "+guess)
+    
+    out = document.getElementById("result")
+    if(guess==color){
+        out.innerHTML= "You got it!"
+        attempts+=1;
+    } else {
+        out.innerHTML = "That was not it..."
+        wrong+=1;
+        attempts+=1;
+    }
+}
+</script>
+
+</body>
+</html> 
