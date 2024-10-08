@@ -17,15 +17,31 @@
     <input type="button" onclick="powerSum()" value="Compute!">
 </form>
 
-
 <p id="sum">The sum will go here</p>
+
+<form>
+    <input type="radio" id="max" name="radioGroup" value="max" checked >
+    <label for="max">Max</label></br>
+  
+    <input type="radio" id="min" name="radioGroup" value="min">
+    <label for="min">Min</label></br>
+  
+    <input type="radio" id="avg" name="radioGroup" value="avg">
+    <label for="avg">Average</label></br>
+
+    <input type="radio" id="geo" name="radioGroup" value="geo">
+    <label for="geo">Geometric</label></br>
+
+    <input type="button" onclick="processRadio()" value="Get values from radio group">
+  </form>
+
+<p id="radioResult">Computed <b>XXX</b> with values <i>first</i> and <i>second</i> with result <b>YYY</b></p>
 
 <script>
 
 function powerSum() {
-    console.log("Getting form values");
-    firstNum = document.getElementById("firstNum").value;
-    secondNum = document.getElementById("secondNum").value;
+    firstNum = parseInt(document.getElementById("firstNum").value);
+    secondNum = parseInt(document.getElementById("secondNum").value);
     
     result = document.getElementById("sum");
     var sum = 0;
@@ -34,6 +50,38 @@ function powerSum() {
        sum += secondNum ** i;
     }
     result.innerHTML = "Sum of "+firstNum+" powers with base "+secondNum+" is "+sum;
+}
+
+function processRadio() {
+    firstNum = parseInt(document.getElementById("firstNum").value);
+    secondNum = parseInt(document.getElementById("secondNum").value);
+    result = document.getElementById("radioResult");
+    selected = document.querySelector('input[name="radioGroup"]:checked');
+
+    if (selected.value=="geo") {
+        var product = firstNum * secondNum;
+        var geometricMean = product ** .5;
+        result.innerHTML = "Computed Geometric Mean with values "+firstNum+" and" +
+        +secondNum+" with result " +geometricMean;
+    }
+    else if (selected.value=="avg") {
+        var sum = firstNum + secondNum;
+        var avg = sum/2;
+        result.innerHTML = "Computed Average with values "+firstNum+" and "
+        +secondNum+" with result " +avg;
+    }
+    else if (selected.value=="min") {
+        if (firstNum<=secondNum) {result.innerHTML = "Computed Minimum with values "+firstNum+" and "
+        +secondNum+" with result " +firstNum;}
+        else {result.innerHTML = "Computed Minimum with values "+firstNum+" and "
+        +secondNum+" with result " +secondNum;}
+    }
+    else { //this is max
+        if (firstNum>=secondNum) {result.innerHTML = "Computed Maximum with values "+firstNum+" and "
+        +secondNum+" with result " +firstNum;}
+        else {result.innerHTML = "Computed Maximum with values "+firstNum+" and "+secondNum+
+        " with result " +secondNum;}
+    }
 }
 </script>
 

@@ -6,19 +6,20 @@
 <h2>Getting input with radio buttons and checkboxes</h2>
 
     <form>
-        <input type="radio" id="rg1_red" name="color" value="red"   
+        <input type="radio" id="max" name="max" value="max"   
           checked >
-        <label for="rg1_red">Red</label></br>
+        <label for="max">Max</label></br>
       
-        <input type="radio" id="rg1_blue" name="color" 
-           value="blue">
-        <label for="rg1_blue">Blue</label></br>
+        <input type="radio" id="min" name="min" value="min">
+        <label for="min">Min</label></br>
       
-        <input type="radio" id="rg1_green" name="color"   
-           value="green">
-        <label for="rg1_green">Green</label></br>
+        <input type="radio" id="avg" name="avg" value="avg">
+        <label for="avg">Average</label></br>
 
-        <input type="button" onclick="resolveRadio()" value="Get values from radio group">
+        <input type="radio" id="geo" name="geo" value="geo">
+        <label for="geo">Geometric</label></br>
+
+        <input type="button" onclick="processRadio()" value="Get values from radio group">
       </form>
       
       <form>
