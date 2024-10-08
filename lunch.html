@@ -16,7 +16,17 @@
     <label for="eat">Eat in</label>
     <input type ="checkbox" id="eat" name="eat" value = 'in' autofocus> <br>
 
-    <input type="button" onclick="startLunch()" value="Start a lunch order">
+    <input type="button" onclick="startLunch()" value="Start a lunch order"> <br>
+</form>
+<hr>
+<form>
+    <label for="property">Enter property</label>
+    <input type = "text" id="property" name="property" value="Entree">
+
+    <label for="value">Set it to:</label>
+    <input type = "text" id="value" name="value"> <br>
+
+    <input type="button" onclick="updateLunch()" value="Update the Lunch">
 </form>
 
 
@@ -35,6 +45,14 @@ function startLunch(){
     my_lunch.eat = document.getElementById("eat").checked;
     //display the object attributes
     document.getElementById("result").innerHTML = JSON.stringify(my_lunch);
+}
+
+function updateLunch() {
+    var property = document.getElementById("property").value;
+    var value = document.getElementById("value").value;
+
+    my_lunch["Property"] = value;
+    document.getElementById("result").innerHTML =JSON.stringify(my_lunch);
 }
 </script>
 
