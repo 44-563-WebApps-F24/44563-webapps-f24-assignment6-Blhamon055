@@ -3,6 +3,11 @@
 Java Script introduction
 
 ## Hosted at: 
-Guessit.html: https://44-563-webapps-f24.github.io/44563-webapps-f24-assignment6-Blhamon055/guessit.html    
-Math.html: https://44-563-webapps-f24.github.io/44563-webapps-f24-assignment6-Blhamon055/math.html
-lunch.html: https://44-563-webapps-f24.github.io/44563-webapps-f24-assignment6-Blhamon055/lunch.html
+Guessit.html:
+https://44-563-webapps-f24.github.io/44563-webapps-f24-assignment6-Blhamon055/guessit.html    
+
+Math.html: 
+https://44-563-webapps-f24.github.io/44563-webapps-f24-assignment6-Blhamon055/math.html
+
+lunch.html: 
+https://44-563-webapps-f24.github.io/44563-webapps-f24-assignment6-Blhamon055/lunch.html
