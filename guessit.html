@@ -26,7 +26,7 @@
 
 var attempts, wrong = 0;
 
-function processColor (){
+function processColor() {
     console.log("Getting form values")
     color = document.getElementById("form_color").value
     guess = document.getElementById("form_guess").value
@@ -34,14 +34,41 @@ function processColor (){
     
     out = document.getElementById("result")
     if(guess==color){
-        out.innerHTML= "You got it!"
+        out.innerHTML = "You got it!";
         attempts+=1;
     } else {
-        out.innerHTML = "That was not it..."
+        out.innerHTML = "That was not it...";
         wrong+=1;
         attempts+=1;
     }
 }
+</script>
+
+<div class="image-container">
+    <img id="plants" src="dragonTree.jpg" width="200" height="200" onclick="nextImage()">
+</div>
+
+<script>
+    var showing = 1;
+    function nextImage() {
+        const image = document.getElementById("plants");
+        switch(showing) {
+            case 1: 
+                image.src = "dragonTree.jpg";
+                showing++;
+                break;
+            case 2: 
+                image.src = "snakePlant.jpg";
+                showing++;
+                break;
+            case 3:
+                image.src = "arrowHead.jpg";
+                showing=1;
+                break;
+            default: 
+                console.log("I'm confused, this shouldn't happen");
+        }   
+    }
 </script>
 
 </body>

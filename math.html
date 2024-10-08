@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math.html</Math></title>
+</head>
+<body>
+
+<h1>Braeden Lhamon figures out</h1>
+
+<form>
+    <label for="firstNum">Enter a number (power)</label>
+    <input type ="number" id="firstNum" name="firstNum" min=0 max=20 step=1 value=2> <br>
+
+    <label for="secondNum">Enter a number (base)</label>
+    <input type ="number" id="secondNum" name="secondNum" value="12" autofocus> <br>
+
+    <input type="button" onclick="powerSum()" value="Compute!">
+</form>
+
+
+<p id="sum">The sum will go here</p>
+
+<script>
+
+function powerSum() {
+    console.log("Getting form values");
+    firstNum = document.getElementById("firstNum").value;
+    secondNum = document.getElementById("secondNum").value;
+    
+    result = document.getElementById("sum");
+    var sum = 0;
+
+    for (let i = 0; i < firstNum; i++) {
+       sum += secondNum ** i;
+    }
+    result.innerHTML = "Sum of "+firstNum+" powers with base "+secondNum+" is "+sum;
+}
+</script>
+
+</body>
+</html> 
